@@ -54,7 +54,7 @@
         /* --- Histoire (Flexbox) --- */
         .history { padding: 5rem 10%; display: flex; align-items: center; gap: 4rem; }
         .history-content { flex: 1; }
-        .history-image { flex: 1; height: 400px; background: url('https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=800&q=80') center/cover; border-radius: 4px; }
+        .history-image { flex: 1; height: 400px; background: url('/img/image.png') center/cover; border-radius: 4px; }
 
         /* --- Plats (Grid) --- */
         .menu-grid { padding: 5rem 10%; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
@@ -80,3 +80,20 @@
         }
         
         
+input{
+    border-radius: 10px;
+}
+.body2{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+form{
+    border: 2px solid red;
+    margin: 20%;
+    padding: 100px;
+    border-radius: 20px;
+    background-image: url("/img/image.png");
+}

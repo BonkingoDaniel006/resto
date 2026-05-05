@@ -1,0 +1,113 @@
+
+:root {
+            --light-bg: #fdfdfd;
+            --text-dark: #2c3e50;
+           
+            --accent-fr: #0055A4;
+            --accent-ci: #FF8200; 
+            --accent-rdc: #F7D117;
+            --border-color: #eee;
+        }
+
+.booking-container {
+    padding: 5rem 10%;
+    background-color: var(--light-bg);
+    display: flex;
+    justify-content: center;
+    
+    
+}
+
+.booking-wrapper {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+}
+
+.section-subtitle {
+    font-size: 1rem;
+    color: #7f8c8d;
+    margin-bottom: 3rem;
+}
+
+.alliance-form {
+    background: white;
+    padding: 3rem;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+}
+
+.input-row {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.input-group {
+    flex: 1;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+    font-weight: bold;
+}
+
+.input-group label i {
+    margin-right: 5px;
+    color: var(--accent-ci);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    background: var(--light-bg);
+    font-family: sans-serif;
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--accent-rdc);
+}
+
+.btn-check-price {
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1rem;
+    border: none;
+    background: var(--text-dark);
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-check-price:hover {
+    background: var(--accent-fr); 
+    transform: translateY(-2px);
+}
+
+
+@media (max-width: 600px) {
+    .input-row {
+        flex-direction: column;
+    }
+    .alliance-form {
+        padding: 1.5rem;
+    }
+}
