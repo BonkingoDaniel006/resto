@@ -14,6 +14,9 @@
         body img{
             border-radius: 10px;
         }
+        body button{
+            border-radius: 10px;
+        }
 
         /* --- Header --- */
         header {
