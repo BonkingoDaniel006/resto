@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Alliance NYC | Gastronomie Fusion</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">L'ALLIANCE <span style="color:var(--accent-fr)">N</span><span style="color:var(--accent-ci)">Y</span><span style="color:var(--accent-rdc)">C</span></div>
+        <nav>
+            <ul>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Histoire</a></li>
+                <li><a href="#">Privatisation</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="burger"><i class="fas fa-bars"></i></div>
+    </header>
+
+    <section class="hero">
+        <h1>L'Art de la Fusion</h1>
+        <p>Une rencontre entre Paris, Abidjan et Kinshasa au cœur de Manhattan.</p><br>
+        <button class="btn-reserve">Réserver une table</button>
+    </section>
+
+    <section class="history">
+        <div class="history-content">
+            <h2>Notre Histoire</h2><br>
+            <p>Né de la passion de trois chefs venus d'horizons différents, notre établissement célèbre la richesse des saveurs francophones. Nous marions les techniques classiques françaises avec l'énergie des épices ivoiriennes et congolaises.</p><br>
+            <p>Chaque plat raconte un voyage, une escale entre la Seine, la Lagune Ébrié et le Fleuve Congo, pour offrir à New York une expérience culinaire inédite et raffinée.</p>
+        </div>
+        <div class="history-image"></div>
+    </section>
+
+    <section class="menu-grid">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=500&q=80" alt="Plat 1">
+            <h3>Souris d'Agneau au Garba</h3>
+            <p class="price">42$</p>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=500&q=80" alt="Plat 2">
+            <h3>Filet de Capitaine au Liboke</h3>
+            <p class="price">38$</p>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=500&q=80" alt="Plat 3">
+            <h3>Magret de Canard à l'Hibiscus</h3>
+            <p class="price">45$</p>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="carousel-track" id="track">
+            <div class="slide">"Une explosion de saveurs. Le mélange est audacieux mais parfaitement maîtrisé." - <strong>New York Times</strong></div>
+            <div class="slide">"Le meilleur de l'Afrique de l'Ouest et Centrale avec le chic parisien." - <strong>Jean D.</strong></div>
+            <div class="slide">"Un cadre épuré, un service impeccable, j'y reviens chaque semaine." - <strong>Sarah L.</strong></div>
+        </div>
+    </section>
+
+    <footer>
+        <div>
+            <h4>Horaires</h4>
+            <p>Lun - Ven : 12h - 23h</p>
+            <p>Sam - Dim : 11h - 00h</p>
+        </div>
+        <div>
+            <h4>Contact</h4>
+            <p>123 Luxury Ave, Manhattan, NY</p>
+            <div class="socials">
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-facebook"></i>
+            </div>
+        </div>
+        <div>
+            <p>&copy; 2026 L'Alliance NYC. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        const track = document.getElementById('track');
+        let index = 0;
+
+        function moveCarousel() {
+            index++;
+            if (index >= 3) index = 0;
+            track.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        setInterval(moveCarousel, 5000);
+    </script>
+</body>
+</html>
