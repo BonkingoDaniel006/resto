@@ -1,10 +1,9 @@
 :root {
-            --light-bg: #fdfdfd;
+           --light-bg:#f5e6d3;
             --text-dark: #2c3e50;
-            /* Accents subtils inspirés des drapeaux */
-            --accent-fr: #0055A4; /* Bleu France */
-            --accent-ci: #FF8200; /* Orange Côte d'Ivoire */
-            --accent-rdc: #F7D117; /* Jaune RDC */
+
+            --accent-fr: #f5e6d3; 
+            --accent-ci: #7a9471; 
             --border-color: #eee;
         }
 
@@ -19,7 +18,7 @@
 
         /* --- Header --- */
         header {
-            position: sticky; top: 0; background: white; z-index: 1000;
+            position: sticky; top: 0; background: #722f37; z-index: 1000;
             display: flex; justify-content: space-between; align-items: center;
             padding: 1rem 5%; border-bottom: 1px solid var(--border-color);
         }
@@ -33,28 +32,33 @@
     margin-right: auto;
 }
         nav ul { display: flex; list-style: none; gap: 2rem; }
-        nav a { text-decoration: none; color: var(--text-dark); font-size: 0.9rem; text-transform: uppercase; }
+        nav a { text-decoration: none; color:#f5e6d3 ; font-size: 0.9rem; text-transform: uppercase; }
         .burger { display: none; font-size: 1.5rem; cursor: pointer; }
 
         /* --- Hero --- */
         .hero {
             height: 100vh;
             background: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=1920&q=80');
-            background-size: cover; background-position: center;
-            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+            background-size: cover;
+             background-position: center;
+            display: flex;
+             flex-direction: column;
+            justify-content: center;
+            align-items: center;
+             text-align: center;
         }
         .hero h1 { font-size: 6rem; margin-bottom: 1rem; color: #1a1a1a; }
         .hero p{color: var(--text-dark); font-size: 1.75rem}
         .btn-reserve {
-            padding: 1rem 2.5rem; border: none; background: var(--text-dark); color: white;
+            padding: 1rem 2.5rem; border: none; background: var(--text-dark); color: #f5e6d3;
             text-transform: uppercase; cursor: pointer; transition: 0.3s;
         }
-        .btn-reserve:hover { background: var(--accent-fr); }
+        .btn-reserve:hover { background: var(--accent-ci); }
 
         /* --- Histoire (Flexbox) --- */
         .history { padding: 5rem 10%; display: flex; align-items: center; gap: 4rem; }
         .history-content { flex: 1; }
-        .history-image { flex: 1; height: 400px; background: url('/img/image.png') center/cover; border-radius: 4px; }
+        .history-image { flex: 1; height: 400px; background: url('https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=800&q=80') center/cover; border-radius: 4px; }
 
         /* --- Plats (Grid) --- */
         .menu-grid { padding: 5rem 10%; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
@@ -68,8 +72,8 @@
         .slide { min-width: 100%; padding: 2rem; font-style: italic; }
 
         /* --- Footer --- */
-        footer { padding: 3rem 10%; background: white; border-top: 1px solid var(--border-color); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 2rem; }
-        .socials i { font-size: 1.2rem; margin-right: 1rem; color: var(--accent-rdc); }
+        footer { padding: 3rem 10%; background:var(--accent-fr); border-top: 1px solid var(--border-color); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 2rem; }
+        .socials i { font-size: 1.2rem; margin-right: 1rem; color: var(--accent-ci); }
 
         /* Responsive */
         @media (max-width: 768px) {
@@ -78,22 +82,3 @@
             .history { flex-direction: column; }
             .hero h1 { font-size: 2.5rem; }
         }
-        
-        
-input{
-    border-radius: 10px;
-}
-.body2{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-}
-form{
-    border: 2px solid red;
-    margin: 20%;
-    padding: 100px;
-    border-radius: 20px;
-    background-image: url("/img/image.png");
-}
