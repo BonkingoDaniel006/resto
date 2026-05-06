@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vérification de Disponibilité | Service Officiel</title>
+    
+    <link rel="stylesheet" href="/css/formulaire.css">
+</head>
+<body>
+
+   
+<section class="booking-container">
+    <div class="booking-wrapper">
+        <h2 class="section-title">Bonne nouvelle! <span style="color:#7a9471">Table(s) disponible</span></h2>
+        <p class="section-subtitle">Votre réservation coûtera : <span id="montant-a-payer">...</span> €</p>
+
+        <a class="btn-check-price" href="/formulaire_validation.html">
+            Réserver
+        </a>
+    </div>
+</section>
+
+<script>
+    // Dès que la page est chargée...
+    document.addEventListener('DOMContentLoaded', function() {
+        // On récupère le nombre de convives depuis la session (avec une valeur par défaut de 1)
+        const guests = sessionStorage.getItem('res_guests') || 1;
+        const prixParPersonne = 50; // Vous pouvez changer ce montant
+        const montantTotal = parseInt(guests) * prixParPersonne;
+
+        // On affiche le montant calculé dans la page
+        document.getElementById('montant-a-payer').textContent = montantTotal;
+
+        // On sauvegarde aussi le prix pour la confirmation finale
+        sessionStorage.setItem('res_prix', montantTotal);
+    });
+</script>
+</body>
+</html>

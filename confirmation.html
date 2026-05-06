@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vérification de Disponibilité | Service Officiel</title>
+    
+    <link rel="stylesheet" href="/css/formulaire.css">
+</head>
+<body>
+
+   
+<section class="booking-container">
+    <div class="booking-wrapper">
+        <h2 class="section-title">Réservation <span style="color:#7a9471">Confirmée</span> !</h2>
+        <p class="section-subtitle">Vous paierez sur place. Voici un récapitulatif :</p>
+        <div id="recap-details" style="margin-top: 20px; line-height: 1.8;">
+            <!-- Le récapitulatif sera injecté ici par le script -->
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const recapContainer = document.getElementById('recap-details');
+
+        // On récupère toutes les données
+        const nom = sessionStorage.getItem('res_nom');
+        const prenom = sessionStorage.getItem('res_prenom');
+        const date = sessionStorage.getItem('res_date');
+        const convives = sessionStorage.getItem('res_guests');
+        const prix = sessionStorage.getItem('res_prix');
+
+        // On construit le HTML du récapitulatif
+        recapContainer.innerHTML = `
+            <strong>Nom :</strong> ${prenom} ${nom}<br>
+            <strong>Date :</strong> ${date}<br>
+            <strong>Nombre de convives :</strong> ${convives}<br>
+            <strong>Montant estimé :</strong> ${prix} €
+        `;
+
+        // Important : on nettoie la session pour la prochaine réservation
+        sessionStorage.clear();
+    });
+</script>
+</body>
+</html>
