@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vérification de Disponibilité | Service Officiel</title>
+    
+    <link rel="stylesheet" href="/css/Style.css">
+</head>
+<body>
+
+   
+<section class="booking-container">
+    <div class="booking-wrapper">
+        <h2 class="section-title">Réserver votre <span style="color:var(--accent-fr)">Expérience</span></h2>
+        <p class="section-subtitle">Veuillez renseigner ces détails pour consulter nos disponibilités et tarifs.</p>
+
+        <form class="alliance-form">
+            <div class="input-row">
+                
+                <div class="input-group">
+                    <label for="date"><i class="far fa-calendar-alt"></i> Date souhaitée</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+            </div>
+
+            <div class="input-row">
+                
+                <div class="input-group">
+                    <label for="tables"><i class="fas fa-chair"></i> Nombre de tables</label>
+                    <input type="number" id="tables" name="tables" min="1" placeholder="Ex: 1" required>
+                </div>
+
+                
+                <div class="input-group">
+                    <label for="guests"><i class="fas fa-users"></i> Nombre de convives</label>
+                    <input type="number" id="guests" name="guests" min="1" placeholder="Ex: 4" required>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-check-price">
+                Vérifier les prix
+            </button>
+        </form>
+    </div>
+</section>
+
+</body>
+</html>
