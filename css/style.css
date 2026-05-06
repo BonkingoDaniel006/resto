@@ -1,15 +1,13 @@
 :root {
-            --light-bg: #fdfdfd;
+            --light-bg: #722f37;
             --text-dark: #2c3e50;
-            /* Accents subtils inspirés des drapeaux */
-            --accent-fr: #0055A4; /* Bleu France */
-            --accent-ci: #FF8200; /* Orange Côte d'Ivoire */
-            --accent-rdc: #F7D117; /* Jaune RDC */
+            --accent-fr: #f5e6d3; /* Bleu France */
+            --accent-ci:#7a9471; /* Orange Côte d'Ivoire */
             --border-color: #eee;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Playfair Display', serif; }
-        body { background-color: var(--light-bg); color: var(--text-dark); line-height: 1.6; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Lato', serif; }
+        body { background-color: var(--accent-fr); color: var(--text-dark); line-height: 1.6; }
         body img{
             border-radius: 10px;
         }
@@ -17,11 +15,10 @@
             border-radius: 10px;
         }
 
-        /* --- Header --- */
         header {
-            position: sticky; top: 0; background: white; z-index: 1000;
+            position: sticky; top: 0; background: #722f37; z-index: 1000;
             display: flex; justify-content: space-between; align-items: center;
-            padding: 1rem 5%; border-bottom: 1px solid var(--border-color);
+            padding: 1rem 5%; border-bottom: 1px solid var(--accent-fr);
         }
         .logo{
             display: flex;
@@ -33,10 +30,9 @@
     margin-right: auto;
 }
         nav ul { display: flex; list-style: none; gap: 2rem; }
-        nav a { text-decoration: none; color: var(--text-dark); font-size: 0.9rem; text-transform: uppercase; }
+        nav a { text-decoration: none; color: var(--accent-fr); font-size: 0.9rem; text-transform: uppercase; }
         .burger { display: none; font-size: 1.5rem; cursor: pointer; }
 
-        /* --- Hero --- */
         .hero {
             height: 100vh;
             background: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=1920&q=80');
@@ -51,24 +47,22 @@
         }
         .btn-reserve:hover { background: var(--accent-fr); }
 
-        /* --- Histoire (Flexbox) --- */
         .history { padding: 5rem 10%; display: flex; align-items: center; gap: 4rem; }
         .history-content { flex: 1; }
         .history-image { flex: 1; height: 400px; background: url('/img/image.png') center/cover; border-radius: 4px; }
 
-        /* --- Plats (Grid) --- */
         .menu-grid { padding: 5rem 10%; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
         .card { background: (248, 249, 250); padding: 1rem; border: 1px solid var(--border-color); text-align: center; border-radius: 10px;  }
         .card img { width: 100%; height: 250px; object-fit: cover; margin-bottom: 1rem; }
         .price { color: var(--accent-ci); font-weight: bold; }
 
-        /* --- Avis (Carousel) --- */
-        .testimonials { padding: 5rem 10%; background: #f9f9f9; text-align: center; overflow: hidden; position: relative; height: 300px; }
+
+        .testimonials { padding: 5rem 10%; background: var(--accent-fr); text-align: center; overflow: hidden; position: relative; height: 300px; }
         .carousel-track { display: flex; transition: transform 0.5s ease-in-out; }
         .slide { min-width: 100%; padding: 2rem; font-style: italic; }
 
         /* --- Footer --- */
-        footer { padding: 3rem 10%; background: white; border-top: 1px solid var(--border-color); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 2rem; }
+        footer { padding: 3rem 10%; background: white; border-top: 1px solid var(black); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 2rem; }
         .socials i { font-size: 1.2rem; margin-right: 1rem; color: var(--accent-rdc); }
 
         /* Responsive */
@@ -91,7 +85,7 @@ input{
     align-items: center;
 }
 form{
-    border: 2px solid red;
+    border: 2px solid ;
     margin: 20%;
     padding: 100px;
     border-radius: 20px;
