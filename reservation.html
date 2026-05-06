@@ -38,12 +38,28 @@
                 </div>
             </div>
 
-            <button type="submit" class="btn-check-price">
-                Vérifier les prix
-            </button>
+            <button type="submit" class="btn-check-price">Vérifier les prix</button>
         </form>
     </div>
 </section>
 
+<script>
+    document.querySelector('.alliance-form').addEventListener('submit', function(e) {
+        e.preventDefault(); // Empêche le rechargement de la page
+
+        // On récupère les valeurs des champs
+        const date = document.getElementById('date').value;
+        const tables = document.getElementById('tables').value;
+        const guests = document.getElementById('guests').value;
+
+        // On les enregistre dans la session du navigateur
+        sessionStorage.setItem('res_date', date);
+        sessionStorage.setItem('res_tables', tables);
+        sessionStorage.setItem('res_guests', guests);
+
+        // On redirige vers la page de validation
+        window.location.href = '/validation.html';
+    });
+</script>
 </body>
 </html>
