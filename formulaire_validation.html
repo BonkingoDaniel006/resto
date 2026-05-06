@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vérification de Disponibilité | Service Officiel</title>
+    
+    <link rel="stylesheet" href="/css/formulaire.css">
+</head>
+<body>
+
+   
+<section class="booking-container">
+    <div class="booking-wrapper">
+        <h2 class="section-title">Réserver votre <span style="color:#7a9471">Expérience</span></h2>
+        <p class="section-subtitle">Veuillez renseigner ces détails pour consulter nos disponibilités et tarifs.</p>
+
+        <form class="alliance-form">
+            <div class="input-row">
+                
+                <div class="input-group">
+                    <label for="name"><i class="far fa-calendar-alt"></i> Noms:</label>
+                    <input type="text" name="name" id="name" placeholder="Basile" required>
+                </div>
+            </div>
+
+           <div class="input-row">
+                
+                <div class="input-group">
+                    <label for="firstname"><i class="far fa-calendar-alt"></i> Prénoms:</label>
+                    <input type="text" name="firstname" id="firstname" placeholder="Duparc" required>
+                </div>
+            </div>
+            <div class="input-row">
+                <div class="input-group">
+                    <label for="Email"><i class="far fa-calendar-alt"></i> Email:</label>
+                    <input type="email" id="email" name="Email" placeholder="basile@example.com" required>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-check-price">Valider et Confirmer</button>
+        </form>
+    </div>
+</section>
+
+<script>
+    document.querySelector('.alliance-form').addEventListener('submit', function(e) {
+        e.preventDefault(); // On bloque l'envoi classique
+
+        // Récupération des informations saisies et mémorisées
+        const nom = document.getElementById('name').value;
+        const prenom = document.getElementById('firstname').value;
+        const email = document.getElementById('email').value;
+        const date = sessionStorage.getItem('res_date');
+        const convives = sessionStorage.getItem('res_guests');
+        const tables = sessionStorage.getItem('res_tables');
+        const prix = sessionStorage.getItem('res_prix');
+
+        // On enregistre les nouvelles informations dans la session
+        sessionStorage.setItem('res_nom', nom);
+        sessionStorage.setItem('res_prenom', prenom);
+        sessionStorage.setItem('res_email', email);
+
+        // Préparation de l'email pour le restaurant
+        const emailResto = "reservation@lalliance-nyc.com"; // Mettez l'email du restaurant ici
+        const sujet = encodeURIComponent(`Nouvelle réservation : ${prenom} ${nom}`);
+        const corps = encodeURIComponent(`Bonjour l'équipe,\n\nVoici une nouvelle demande de réservation :\n\n- Nom : ${prenom} ${nom}\n- Email client : ${email}\n- Date : ${date}\n- Nombre de tables : ${tables}\n- Nombre de convives : ${convives}\n- Montant estimé : ${prix} €\n\nMerci de confirmer cette demande.`);
+
+        // Ouvre le client mail de l'utilisateur avec les infos pré-remplies
+        window.location.href = `mailto:${emailResto}?subject=${sujet}&body=${corps}`;
+
+        // On redirige vers la page de confirmation après un tout petit délai
+        // pour laisser le temps à l'application mail de s'ouvrir
+        setTimeout(() => {
+            window.location.href = '/confirmation.html';
+        }, 500);
+    });
+</script>
+</body>
+</html>
