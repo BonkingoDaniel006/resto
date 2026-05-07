@@ -8,8 +8,8 @@ app = Flask(__name__)
 # Adaptez ces paramètres en fonction de votre base MySQL (ex: XAMPP, WAMP, etc.)
 DB_HOST = 'localhost'
 DB_USER = 'root'
-DB_PASSWORD = ''
-DB_NAME = 'restaurant_db'
+DB_PASSWORD = 'Daniel12349'
+DB_NAME = 'BDD'
 
 def get_db_connection():
     return pymysql.connect(
