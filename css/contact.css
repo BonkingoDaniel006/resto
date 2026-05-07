@@ -1,14 +1,20 @@
 :root {
     --primary-bordeaux: #722f37;
     --secondary-cream: #f5e6d3;
-    --accent-sage: #7a9471;
+    --accent-sage: #252b23;
     --text-dark: #2c3e50;
     --border-color: rgba(238, 238, 238, 0.3);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; font-family:'monaco'; }
 
-body { background-color: var(--secondary-cream); color:var(--accent-sage) ; line-height: 2; }
+body { background-color: var(--secondary-cream); 
+    color:var(--accent-sage) ; 
+    line-height: 1.6; 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 
 header {
             position: sticky; top: 0; background: #722f37; z-index: 1000;
@@ -83,16 +89,50 @@ nav a { text-decoration: none; color: var(--secondary-cream); font-size: 1rem; t
 .btn-reserve:hover { background: var(--accent-sage); }
 
 /* --- Footer --- */
-footer { padding: 2rem 10%; background: var(--primary-bordeaux); color: white; text-align: center; }
+footer { 
+    padding: 2rem 10%; 
+    background: var(--primary-bordeaux); 
+    color: white; 
+    text-align: center; 
+}
 .socials { margin-bottom: 1rem; }
 .socials i { font-size: 1.5rem; margin: 0 10px; color: var(--secondary-cream); cursor: pointer; }
 .map{
     display: flex;
     width: 100%;
-    height: 200px;
+    height: 100%;
     
 }
 iframe{
     width: 100%;
     height: 100%;
+}
+
+.page-body {
+    flex: 1; /* Permet de pousser le footer tout en bas */
+    display: flex; /* Aligne les éléments enfants (les carrés) côte à côte */
+    padding: 2rem 5%;
+    gap: 2rem; /* Espace entre les deux carrés */
+}
+
+.carre1{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Aligne le contenu tout en haut (0 sur l'axe Y) */
+    gap: 4rem; /* Un grand espacement entre les horaires et le formulaire */
+    padding: 2.5rem;
+    background-color: var(--secondary-cream);
+    border-radius: 10px;
+    width: 50%;
+    min-height: 200px;
+    border: 3px solid var(--primary-bordeaux);
+
+}
+.carre2{
+    display: flex;
+    width: 50%;
+    min-height: 200px;
+    border: 2px solid var(--primary-bordeaux);
+    border-radius: 10px;
+    overflow: hidden;
 }
