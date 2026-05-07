@@ -61,19 +61,34 @@
         sessionStorage.setItem('res_prenom', prenom);
         sessionStorage.setItem('res_email', email);
 
-        // Préparation de l'email pour le restaurant
-        const emailResto = "reservation@lalliance-nyc.com"; // Mettez l'email du restaurant ici
-        const sujet = encodeURIComponent(`Nouvelle réservation : ${prenom} ${nom}`);
-        const corps = encodeURIComponent(`Bonjour l'équipe,\n\nVoici une nouvelle demande de réservation :\n\n- Nom : ${prenom} ${nom}\n- Email client : ${email}\n- Date : ${date}\n- Nombre de tables : ${tables}\n- Nombre de convives : ${convives}\n- Montant estimé : ${prix} €\n\nMerci de confirmer cette demande.`);
+        // Regroupement des données pour l'envoi au backend
+        const data = {
+            nom: nom,
+            prenom: prenom,
+            email: email,
+            date_reservation: date,
+            tables: tables,
+            convives: convives,
+            prix: prix
+        };
 
-        // Ouvre le client mail de l'utilisateur avec les infos pré-remplies
-        window.location.href = `mailto:${emailResto}?subject=${sujet}&body=${corps}`;
-
-        // On redirige vers la page de confirmation après un tout petit délai
-        // pour laisser le temps à l'application mail de s'ouvrir
-        setTimeout(() => {
-            window.location.href = '/confirmation.html';
-        }, 500);
+        // Envoi au backend Flask en AJAX
+        fetch('/api/save_reservation', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        })
+        .then(response => {
+            if (response.ok) {
+                window.location.href = '/confirmation.html';
+            } else {
+                alert("Erreur lors de l'enregistrement de votre réservation.");
+            }
+        })
+        .catch(error => {
+            console.error('Erreur:', error);
+            alert("Erreur de connexion au serveur.");
+        });
     });
 </script>
 </body>

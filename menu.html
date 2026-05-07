@@ -5,67 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bistrot Le Rétro - La Carte Visuelle</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --light-bg: #722f37;    /* Bordeaux */
-            --text-dark: #2c3e50;   /* Sombre */
-            --accent-fr: #f5e6d3;   /* Crème */
-            --accent-ci: #7a9471;   /* Vert/Sauge */
-            --white: #ffffff;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Lato', sans-serif; }
-        body { background-color: var(--accent-fr); color: var(--text-dark); line-height: 1.6; }
-
-        header {
-            position: sticky; top: 0; background: var(--light-bg); z-index: 1000;
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 1rem 5%; border-bottom: 1px solid var(--accent-fr);
-        }
-
-        .logo { color: var(--accent-fr); font-family: 'Playfair Display', serif; font-size: 1.5rem; text-decoration: none; font-weight: bold; }
-
-        .menu-container { padding: 40px 5%; text-align: center; }
-        .section-title { color: var(--light-bg); font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 30px; }
-
-        .filter-container { margin-bottom: 30px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
-        .filter-btn {
-            padding: 8px 20px; border: 1px solid var(--light-bg); background: transparent;
-            color: var(--light-bg); cursor: pointer; border-radius: 20px; transition: 0.3s;
-        }
-        .filter-btn.active, .filter-btn:hover { background: var(--light-bg); color: var(--accent-fr); }
-
-        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto; }
-
-        .menu-card {
-            background: var(--white); border-radius: 10px; overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease;
-            display: flex; flex-direction: column;
-        }
-
-        .menu-card:hover { transform: translateY(-5px); }
-
-        /* Style des images */
-        .card-img-wrapper { width: 100%; height: 180px; overflow: hidden; }
-        .card-img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
-        .menu-card:hover .card-img-wrapper img { transform: scale(1.1); }
-
-        .card-content { padding: 15px; flex-grow: 1; text-align: left; }
-        .card-content h3 { color: var(--light-bg); font-size: 1.1rem; margin-bottom: 8px; }
-        
-        .tags { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 10px; }
-        .tag { font-size: 0.65rem; padding: 2px 8px; border-radius: 10px; background: #eee; text-transform: uppercase; }
-        .tag.vege { background: #d4edda; color: #155724; }
-        .tag.gf { background: #fff3cd; color: #856404; }
-        .tag.spicy { background: #f8d7da; color: #721c24; }
-
-        .price { display: block; color: var(--accent-ci); font-weight: bold; font-size: 1.1rem; margin-top: 10px; }
-    </style>
+    <link rel="stylesheet" href="/css/menu.css">
 </head>
 <body>
 
     <header>
-        <a href="#" class="logo">LE RÉTRO</a>
+        <a href="#" class="logo">BISTROT LE RÉTRO</a>
     </header>
 
     <main class="menu-container">
