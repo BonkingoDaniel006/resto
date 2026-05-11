@@ -113,6 +113,8 @@ iframe{
     display: flex; /* Aligne les éléments enfants (les carrés) côte à côte */
     padding: 2rem 5%;
     gap: 2rem; /* Espace entre les deux carrés */
+    background: url('https://i.pinimg.com/736x/71/19/3c/71193c1caf19b529aaa3b7e206cc52d8.jpg'),
+    linear-gradient(rgba(255,255,255,0.3)) , rgba(255,255,255,0.3);
 }
 
 .carre1{
