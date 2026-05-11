@@ -14,6 +14,9 @@ try {
     // Configurer PDO pour lever des exceptions en cas d'erreur
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+        // Print de débug affiché dans la console du terminal
+        error_log("====> TEST: Connexion à la base de données réussie !");
+
     // Vérifier si la méthode de requête est bien POST
     if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
         http_response_code(405);
@@ -52,6 +55,9 @@ try {
         ':convives'         => $data['convives'] ?? null,
         ':prix'             => $data['prix'] ?? null
     ]);
+
+        // Print de débug affiché dans la console du terminal
+        error_log("====> TEST: Enregistrement en base de données effectué !");
 
     http_response_code(200);
     echo json_encode(['success' => true]);
