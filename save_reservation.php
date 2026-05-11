@@ -21,9 +21,13 @@ try {
         exit;
     }
 
-    // Récupération des données JSON envoyées en POST
-    $json = file_get_contents('php://input');
-    $data = json_decode($json, true);
+    // Récupération des données (supporte le JSON via JS ou un Formulaire HTML classique)
+    $data = json_decode(file_get_contents('php://input'), true);
+    
+    // Si le JSON est vide, on vérifie si les données viennent d'un formulaire classique
+    if (!$data && !empty($_POST)) {
+        $data = $_POST;
+    }
 
     if (!$data) {
         http_response_code(400);
@@ -33,8 +37,8 @@ try {
 
     // Préparation de la requête sécurisée contre les injections SQL
     $sql = "INSERT INTO reservations 
-            (nom, prenom, email, date_reservation, nombre_tables, nombre_convives, prix) 
-            VALUES (:nom, :prenom, :email, :date_reservation, :tables, :convives, :prix)";
+            (nom, prenom, email, date_reservation, nombre_tables, nombre_convives, prix, cree_le) 
+            VALUES (:nom, :prenom, :email, :date_reservation, :tables, :convives, :prix, NOW())";
     
     $stmt = $pdo->prepare($sql);
     
